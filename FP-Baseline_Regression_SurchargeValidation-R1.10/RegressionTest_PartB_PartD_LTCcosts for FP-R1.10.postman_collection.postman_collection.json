@@ -1,0 +1,615 @@
+{
+	"info": {
+		"_postman_id": "374b8b85-5896-4e13-a883-bc5d2a66d340",
+		"name": "RegressionTest_PartB_PartD_LTCcosts for FP-R1.4.postman_collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "IndividualPreMedicareR3",
+			"item": [
+				{
+					"name": "individualPreMedicareCost_validation",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "a451a14b-ea24-4859-b69e-967912bbdeeb",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Basic RmluYW5jaWFsUGxhbm5lclNlcnZpY2VVc2VyOkZpbmFuY2lhbFBsYW5uZXJQQHNzdzByZA=="
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"birthDate\":\"02-1956\",\r\n\t\"retirementYear\":\"03-2019\",\r\n\t\"lifeExpectancy\":66,\r\n    \r\n      \"planType\":\"PLATINUM\",\r\n      \"healthGrade\":\"4\",\r\n      \"stateName\":\"Texas\",\r\n      \"retirementState\":\"{{state}}\",\r\n     \"zipcode\":\"{{zipcode}}\",\r\n      \"boughtPlanA\":\"true\",\r\n      \"dental\":\"true\",\r\n      \"dentalHealthGrade\":\"3\",\r\n      \"tobacco\":false\r\n     \r\n    \r\n     \r\n    \r\n    \r\n     \r\n    \r\n    }"
+						},
+						"url": {
+							"raw": "{{server}}/individualPreMedicareR3",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"individualPreMedicareR3"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "10420422-ecac-4e14-91da-3d144c3b8d59",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "4778a616-c114-46b7-809a-7b8fbc3a3b6b",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Status check 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"var jsonData=JSON.parse(responseBody);",
+							"",
+							"pm.test(\"totalPreMedicareCost is not 0\", function(){",
+							"    pm.expect(jsonData.individualPreMedicares[0].totalPreMedicareCost).to.not.equal (0);",
+							"});"
+						]
+					}
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "IndividualMedicareR3",
+			"item": [
+				{
+					"name": "individualMedicare_partB_partD_planN_planG-zipcodeValidation",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "23e1fcbd-8d2d-4d9c-9631-07d03916a1e7",
+								"exec": [
+									"",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Basic RmluYW5jaWFsUGxhbm5lclNlcnZpY2VVc2VyOkZpbmFuY2lhbFBsYW5uZXJQQHNzdzByZA==",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"lifeExpectancy\": \"80\",\n    \"yearWiseMagiDetailList\": [],\n    \"reserveDaysUsed\": \"0\",\n    \"birthDate\": \"01-1954\",\n    \"retirementYear\": \"01-2020\",\n    \"healthGrade\": \"3\",\n    \"stateName\": \"New Jersey\",\n    \"retirementState\": \"{{state}}\",\n    \"zipcode\":\"{{zipcode}}\",\n    \"dental\": \"true\",\n    \"dentalHealthGrade\": \"1\",\n    \"planType\": \"GOLD\",\n    \"tobacco\": \"false\",\n    \"boughtPlanA\": \"false\",\n    \"singleVsMultipleMagi\": \"false\",\n    \"magiTierVsDollarAmount\": \"false\",\n    \"magiTier\": 1\n}"
+						},
+						"url": {
+							"raw": "{{server}}/individualMedicareR3",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"individualMedicareR3"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "c95316ba-4b39-4c4b-a5af-4ffabe91fbdd",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "f8685a6b-275d-48b7-b54a-fae8ef07855f",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Status check 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"var jsonData=JSON.parse(responseBody);",
+							"",
+							"pm.test(\"partBPremium is not 0\", function(){",
+							"    pm.expect(jsonData.individualMedicares[0].partBPremium).to.not.equal (0);",
+							"});",
+							"pm.test(\"partDPremium is not 0\", function(){",
+							"    pm.expect(jsonData.individualMedicares[0].partDPremium).to.not.equal (0);",
+							"});",
+							"pm.test(\"planNPremium is not 0\", function(){",
+							"    pm.expect(jsonData.individualMedicares[0].partBPremium).to.not.equal (0);",
+							"});",
+							"pm.test(\"planGPremium is not 0\", function(){",
+							"    pm.expect(jsonData.individualMedicares[0].partDPremium).to.not.equal (0);",
+							"});",
+							"",
+							"",
+							"",
+							"",
+							"",
+							"",
+							"",
+							"",
+							"",
+							""
+						]
+					}
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "IndividualTotalExpenseR3",
+			"item": [
+				{
+					"name": "individualTotalExpenses_PartB_PartD_planN_planG",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "1852bd58-ddb0-44c5-b66f-31bb5c567fed",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Basic RmluYW5jaWFsUGxhbm5lclNlcnZpY2VVc2VyOkZpbmFuY2lhbFBsYW5uZXJQQHNzdzByZA=="
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{    \n\t\"birthDate\":\"01-1954\",\n\t\"retirementYear\":\"01-2020\",\n\t\"lifeExpectancy\":90,\n      \"planType\":\"silver\",\n      \"healthGrade\":\"3\",\n      \"stateName\":\"New Jersey\",\n      \"retirementState\":\"{{state}}\",\n      \"Zipcode\":\"{{zipcode}}\",\n      \"boughtPlanA\":\"false\",\n      \"fullYearDataForLifeExpectancyYear\":true,\n      \"reserveDaysUsed\":\"0\",\n      \"dental\":\"false\",\n      \"dentalHealthGrade\":\"3\",\n      \"tobacco\":false,\n\t  \"singleVsMultipleMagi\":false,\n      \"magiTierVsDollarAmount\":false,\n      \"magiTier\":1,\n      \"taxFilingStatus\":\"MARRIED_FILING_JOINTLY\",\n      \"magiDollarAmount\":80000,\n      \"yearWiseMagiDetailList\":[\n      \t]\n          }\n          "
+						},
+						"url": {
+							"raw": "{{server}}/individualTotalExpensesR3",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"individualTotalExpensesR3"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "746d61c7-ac2a-4738-913a-436babfbffb0",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "d1057521-ee89-477c-bcd1-e4266ded14c5",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Status check 200\", function () {",
+							"pm.response.to.have.status(200);",
+							"});",
+							"var jsonData=JSON.parse(responseBody);",
+							"pm.test(\"partBPremium is not 0\", function(){",
+							"pm.expect(jsonData.individualTotalExpenses[0].partBPremium).to.not.equal (0);",
+							"});",
+							"pm.test(\"partDPremium is not 0\", function(){",
+							"pm.expect(jsonData.individualTotalExpenses[0].partDPremium).to.not.equal (0);",
+							"});",
+							"pm.test(\"planNPremium is not 0\", function(){",
+							"pm.expect(jsonData.individualTotalExpenses[0].planNPremium).to.not.equal (0);",
+							"});",
+							"pm.test(\"planGPremium is not 0\", function(){",
+							"pm.expect(jsonData.individualTotalExpenses[0].planGPremium).to.not.equal (0);",
+							"});"
+						]
+					}
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "familyPreMedicareR3",
+			"item": [
+				{
+					"name": "totalfamilypremedicare expense-validation",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "cb6540a5-7498-4177-9ee4-d398a5988e78",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Basic RmluYW5jaWFsUGxhbm5lclNlcnZpY2VVc2VyOkZpbmFuY2lhbFBsYW5uZXJQQHNzdzByZA=="
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n      \"primaryBirthDate\":\"01-1956\",\r\n      \"primaryRetirementYear\":\"01-2019\",\r\n      \"primaryHealthGrade\":\"2\",\r\n      \"primaryStateName\":\"Texas\",\r\n      \"primaryZipcode\":\"{{zipcode}}\",\r\n      \"primaryRetirementState\":\"{{state}}\",\r\n      \"primaryDental\":\"false\",\r\n      \"primaryDentalHealthGrade\":\"1\",\r\n      \"primaryPlanType\":\"Silver\",\r\n      \"primaryTobacco\":\"false\",\r\n      \"spouseIncluded\":true,\r\n      \r\n      \r\n      \"spouseBirthDate\":\"01-1957\",\r\n      \"spouseRetirementYear\":\"07-2020\",\r\n      \"spouseDental\":\"true\",\r\n      \"spouseHealthGrade\":\"3\",\r\n      \"spouseStateName\":\"Texas\",\r\n      \"spouseZipcode\": \"{{zipcode}}\",\r\n      \"spouseRetirementState\":\"{{state}}\",\r\n      \"spouseDentalHealthGrade\":\"1\",\r\n      \"spousePlanType\":\"Bronze\",\r\n      \"spouseTobacco\":\"false\"\r\n    }"
+						},
+						"url": {
+							"raw": "{{server}}/familyPreMedicareR3",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"familyPreMedicareR3"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "6a784dea-e76c-451d-ace1-c2687e831548",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "d404a990-83de-4791-a0ec-259bc4244804",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Status check 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"var jsonData=JSON.parse(responseBody);",
+							"",
+							"pm.test(\"totalFamilyPreMedicareHealthcareCost is not 0\", function(){",
+							"    pm.expect(jsonData.familyPreMedicares[0].totalFamilyPreMedicareHealthcareCost).to.not.equal (0);",
+							"});"
+						]
+					}
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "familyMedicareR3PartBandPartDZipcodeValidation",
+			"item": [
+				{
+					"name": "familyMedicare_partB_partD_planN_planG",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "28fdcb29-c741-4ecb-bf78-64466b515df1",
+								"exec": [
+									"tests[\"Status code is 200\"] = responseCode.code === 200;"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Basic RmluYW5jaWFsUGxhbm5lclNlcnZpY2VVc2VyOkZpbmFuY2lhbFBsYW5uZXJQQHNzdzByZA=="
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "\n\n{\n      \"primaryBirthDate\": \"01-1954\",\n      \"primaryRetirementYear\": \"01-2020\",\n      \"primaryLifeExpectancy\":80,\n      \"primarySingleVsMultipleMagi\": \"false\",\n      \"primaryMagiTierVsDollarAmount\": \"false\",\n      \"primaryMagiTier\": 1,\n      \"primaryTaxFilingStatus\": \"MARRIED_FILING_SEPARATELY\",\n      \"primaryMagiDollarAmount\": 19634499,\n      \"primaryHealthGrade\": 3,\n      \"primaryStateName\": \"Colorado\",\n      \"primaryZipcode\":\"{{zipcode}}\",\n      \"primaryRetirementState\":\"{{state}}\",\n      \"primaryBoughtPlanA\":\"false\",\n      \"primaryReserveDaysUsed\": 0,\n      \"primaryDental\":\"true\",\n      \"primaryDentalHealthGrade\": 1,\n      \"primaryPlanType\": \"Gold\",\n      \"primaryTobacco\":\"false\",\n      \"spouseIncluded\":\"true\",\n     \n      \"spouseBirthDate\": \"01-1954\",\n      \"spouseRetirementYear\": \"01-2020\",\n      \"spouseLifeExpectancy\":80,\n      \"spouseSingleVsMultipleMagi\":  \"false\",\n      \"spouseMagiTierVsDollarAmount\":  \"false\",\n      \"spouseMagiTier\":  1,\n      \"spouseTaxFilingStatus\": \"MARRIED_FILING_SEPARATELY\",\n      \"spouseMagiDollarAmount\":  19634499,\n      \"spouseHealthGrade\": 3,\n      \"spouseStateName\":\"Colorado\",\n      \"spouseZipcode\":\"{{zipcode}}\",\n      \"spouseRetirementState\":\"{{state}}\",\n      \"spouseBoughtPlanA\": \"false\",\n      \"spouseReserveDaysUsed\":0,\n      \"spouseDental\":\"true\",\n      \"spouseDentalHealthGrade\": 1,\n      \"spousePlanType\":\"Gold\",\n      \"spouseTobacco\":\"false\",\n  \"primaryYearWiseMagiDetailList\":[],\n      \"spouseYearWiseMagiDetailList\":[]\n    }\n"
+						},
+						"url": {
+							"raw": "{{server}}/familyMedicareR3",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"familyMedicareR3"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "Assertions for partB premium surcharge magitier1-6",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "0e891bb6-17d8-45f4-bf6c-81dcf368c4f2",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "f81193cb-5521-4fb4-8067-a750e2bef2bb",
+						"type": "text/javascript",
+						"exec": [
+							"var jsonData=JSON.parse(responseBody);",
+							"",
+							"pm.test(\"primaryPartBPremium is not 0\", function() {",
+							"    pm.expect(jsonData.familyMedicares[0].primaryPartBPremium).to.not.equal(0);",
+							"});",
+							"",
+							"pm.test(\"primaryPartDPremium is not 0\", function() {",
+							"    pm.expect(jsonData.familyMedicares[0].primaryPartDPremium).to.not.equal(0);",
+							"});",
+							"pm.test(\"spousePartBPremium is not 0\", function() {",
+							"    pm.expect(jsonData.familyMedicares[0].spousePartBPremium).to.not.equal(0);",
+							"    ",
+							"});",
+							"pm.test(\"spousePartDPremium is not 0\", function() {",
+							"    pm.expect(jsonData.familyMedicares[0].spousePartDPremium).to.not.equal(0);",
+							"});",
+							"pm.test(\"primaryPlanGPremium is not 0\", function(){",
+							"pm.expect(jsonData.familyMedicares[0].primaryPlanGPremium).to.not.equal(0);",
+							"});",
+							"pm.test(\"primaryPlanNPremium is not 0\", function(){",
+							"pm.expect(jsonData.familyMedicares[0].primaryPlanNPremium).to.not.equal(0);",
+							"});",
+							"pm.test(\"spousePlanGPremium is not 0\", function(){",
+							"pm.expect(jsonData.familyMedicares[0].spousePlanGPremium).to.not.equal(0);",
+							"});",
+							"pm.test(\"spousePlanNPremium is not 0\", function(){",
+							"pm.expect(jsonData.familyMedicares[0].spousePlanNPremium).to.not.equal(0);",
+							"});"
+						]
+					}
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "FamilyTotal_PartB_PartD_validation",
+			"item": [
+				{
+					"name": "familyTotal_PartB_PartD_PlanN_PlanG",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "37ec2958-2897-4ba0-b425-246ed05b0f9b",
+								"exec": [
+									"pm.test(\"Status check 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Basic RmluYW5jaWFsUGxhbm5lclNlcnZpY2VVc2VyOkZpbmFuY2lhbFBsYW5uZXJQQHNzdzByZA=="
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n      \"primaryBirthDate\": \"08-1954\",\n      \"primaryRetirementYear\": \"06-2020\",\n      \"primaryLifeExpectancy\":71,\n      \"primarySingleVsMultipleMagi\": \"false\",\n      \"primaryMagiTierVsDollarAmount\": \"false\",\n      \"primaryMagiTier\": 1,\n      \"primaryTaxFilingStatus\": \"MARRIED_FILING_SEPARATELY\",\n      \"primaryMagiDollarAmount\": 43346211,\n      \"primaryHealthGrade\": 3,\n      \"primaryStateName\": \"Colorado\",\n      \"primaryRetirementState\": \"{{state}}\",\n      \"primaryZipcode\": \"{{zipcode}}\",\n      \"primaryBoughtPlanA\":\"true\",\n      \"primaryReserveDaysUsed\": 0,\n      \"primaryDental\":\"true\",\n      \"primaryDentalHealthGrade\": 3,\n      \"primaryPlanType\": \"Gold\",\n      \"primaryTobacco\":\"true\",\n      \n       \"spouseIncluded\":\"true\",\n      \"spouseBirthDate\": \"08-1954\",\n      \"spouseRetirementYear\": \"06-2020\",\n      \"spouseLifeExpectancy\":71,\n      \"spouseSingleVsMultipleMagi\":  \"false\",\n      \"spouseMagiTierVsDollarAmount\":  \"false\",\n      \"spouseMagiTier\":  1,\n      \"spouseTaxFilingStatus\": \"MARRIED_FILING_SEPARATELY\",\n      \"spouseMagiDollarAmount\":  43346211,\n      \"spouseHealthGrade\": 3,\n      \"spouseStateName\":\"Colorado\",\n      \"spouseRetirementState\": \"{{state}}\",\n      \"spouseZipcode\": \"{{zipcode}}\",\n      \"spouseBoughtPlanA\": \"true\",\n      \"spouseReserveDaysUsed\":0,\n      \"spouseDental\":\"true\",\n      \"spouseDentalHealthGrade\": 3,\n      \"spousePlanType\":\"Gold\",\n      \"spouseTobacco\":\"true\",\n \t \"primaryYearWiseMagiDetailList\":[ ],\n \t \"spouseYearWiseMagiDetailList\":[]\n    }\n    \n    \n",
+							"options": {
+								"raw": {}
+							}
+						},
+						"url": {
+							"raw": "{{server}}/familyTotalExpensesR3",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"familyTotalExpensesR3"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "e5012374-ed76-4258-b5bc-3fa45d52125b",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "f5e6b153-2903-4efd-8d54-9b32c7813717",
+						"type": "text/javascript",
+						"exec": [
+							"var jsonData=JSON.parse(responseBody);",
+							"",
+							"pm.test(\"primaryPartBPremium is not 0\", function(){",
+							"pm.expect(jsonData.familyTotalExpenses[0].primaryPartBPremium).to.not.equal (0);",
+							"});",
+							"",
+							"pm.test(\"spousePartBPremium is not 0\", function(){",
+							"pm.expect(jsonData.familyTotalExpenses[0].spousePartBPremium).to.not.equal (0);",
+							"});",
+							"pm.test(\"primaryPartDPremium is not 0\", function(){",
+							"pm.expect(jsonData.familyTotalExpenses[0].primaryPartDPremium).to.not.equal (0);",
+							"});",
+							"pm.test(\"spousePartDPremium is not 0\", function(){",
+							"pm.expect(jsonData.familyTotalExpenses[0].spousePartDPremium).to.not.equal (0);",
+							"});",
+							"pm.test(\"primaryPlanGPremium is not 0\", function(){",
+							"pm.expect(jsonData.familyTotalExpenses[0].primaryPlanGPremium).to.not.equal (0);",
+							"});",
+							"pm.test(\"primaryPlanNPremium is not 0\", function(){",
+							"pm.expect(jsonData.familyTotalExpenses[0].primaryPlanNPremium).to.not.equal (0);",
+							"});",
+							"pm.test(\"spousePlanGPremium is not 0\", function(){",
+							"pm.expect(jsonData.familyTotalExpenses[0].spousePlanGPremium).to.not.equal (0);",
+							"});",
+							"pm.test(\"spousePlanNPremium is not 0\", function(){",
+							"pm.expect(jsonData.familyTotalExpenses[0].spousePlanNPremium).to.not.equal (0);",
+							"});"
+						]
+					}
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "LTCR4_CSV approach",
+			"item": [
+				{
+					"name": "LTCR4",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "55dd9195-99d5-4f5e-8da4-5f6926f7ca49",
+								"exec": [
+									"pm.test(\"Status check 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"var jsonData=JSON.parse(responseBody);",
+									"pm.test(\"expectedAdultDayHealthCare field Check\",function(){",
+									"   pm.expect(jsonData).to.have.property('expectedAdultDayHealthCare');",
+									"});",
+									"pm.test(\"expectedHomeCare field check\", function(){",
+									"    pm.expect(jsonData).to.have.property('expectedHomeCare');",
+									"});",
+									"pm.test(\"expectedAssistedCare field check\", function(){",
+									"    pm.expect(jsonData).to.have.property('expectedAssistedCare');",
+									"});",
+									"pm.test(\"expectedNursingCare field check\", function(){",
+									"    pm.expect(jsonData).to.have.property('expectedNursingCare');",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Basic RmluYW5jaWFsUGxhbm5lclNlcnZpY2VVc2VyOkZpbmFuY2lhbFBsYW5uZXJQQHNzdzByZA==",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{   \r\n\t\"age\": \"30\",\r\n\t\"transactionTypeFlag\":\"false\",\r\n\t\"zipcode\":\"{{zipcode}}\",\r\n\t\"state\": \"{{state}}\",\r\n\t\"pvAsOfYear\": 2060,\r\n\t\"healthProfile\": \"2\",\r\n\t\"gender\": \"M\",\r\n\t\"lifeExpectancy\": \"70\",\r\n\t\"currentLifeStyleExpenses\": \"1\",\r\n\t\r\n\t\"numberOfAdultDayHealthCareLTCYears\":\"2\",\r\n\t\"numberOfHomeCareLTCYears\": \"2\",\r\n\t\"numberOfAssistedCareLTCYears\":\"2\",\r\n\t\"numberOfNursingCareLTCYears\":\"2\"\r\n}"
+						},
+						"url": {
+							"raw": "{{server}}/longTermCareR4",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"longTermCareR4"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}

@@ -1,0 +1,205 @@
+endpoint,state,zipcode
+individualMedicareR3,Alaska,99546
+individualMedicareR3,Alabama,35111
+individualMedicareR3,Arkansas,72354
+individualMedicareR3,Arizona,85321
+individualMedicareR3,California,93202
+individualMedicareR3,Colorado,81321
+individualMedicareR3,Connecticut,6249
+individualMedicareR3,Dist of Columbia,20001
+individualMedicareR3,Delaware,19701
+individualMedicareR3,Florida,32003
+individualMedicareR3,Georgia,30002
+individualMedicareR3,Hawaii,96703
+individualMedicareR3,Iowa,50065
+individualMedicareR3,Idaho,83611
+individualMedicareR3,Illinois,61727
+individualMedicareR3,Indiana,47564
+individualMedicareR3,Kansas,67418
+individualMedicareR3,Kentucky,40313
+individualMedicareR3,Louisiana,71316
+individualMedicareR3,Massachusetts,1054
+individualMedicareR3,Maryland,21520
+individualMedicareR3,Maine,4010
+individualMedicareR3,Michigan,49836
+individualMedicareR3,Minnesota,56212
+individualMedicareR3,Missouri,63737
+individualMedicareR3,Mississippi,39750
+individualMedicareR3,Montana,59058
+individualMedicareR3,North Carolina,28636
+individualMedicareR3,North Dakota,58477
+individualMedicareR3,Nebraska,68007
+individualMedicareR3,New Hampshire,3215
+individualMedicareR3,New Jersey,8014
+individualMedicareR3,New Mexico,87730
+individualMedicareR3,Nevada,89415
+individualMedicareR3,New York,12345
+individualMedicareR3,Ohio,43310
+individualMedicareR3,Oklahoma,74521
+individualMedicareR3,Oregon,97711
+individualMedicareR3,Pennsylvania,15711
+individualMedicareR3,Rhode Island,2801
+individualMedicareR3,South Carolina,29401
+individualMedicareR3,South Dakota,57012
+individualMedicareR3,Tennessee,37707
+individualMedicareR3,Texas,76001
+individualMedicareR3,Utah,84301
+individualMedicareR3,Virginia,24058
+individualMedicareR3,Vermont,5442
+individualMedicareR3,Washington,98581
+individualMedicareR3,Wisconsin,54135
+individualMedicareR3,West Virginia,25022
+individualMedicareR3,Wyoming,82301
+individualTotalExpensesR3,Alaska,99546
+individualTotalExpensesR3,Alabama,35111
+individualTotalExpensesR3,Arkansas,72354
+individualTotalExpensesR3,Arizona,85321
+individualTotalExpensesR3,California,93202
+individualTotalExpensesR3,Colorado,81321
+individualTotalExpensesR3,Connecticut,6249
+individualTotalExpensesR3,Dist of Columbia,20001
+individualTotalExpensesR3,Delaware,19701
+individualTotalExpensesR3,Florida,32003
+individualTotalExpensesR3,Georgia,30002
+individualTotalExpensesR3,Hawaii,96703
+individualTotalExpensesR3,Iowa,50065
+individualTotalExpensesR3,Idaho,83611
+individualTotalExpensesR3,Illinois,61727
+individualTotalExpensesR3,Indiana,47564
+individualTotalExpensesR3,Kansas,67418
+individualTotalExpensesR3,Kentucky,40313
+individualTotalExpensesR3,Louisiana,71316
+individualTotalExpensesR3,Massachusetts,1054
+individualTotalExpensesR3,Maryland,21520
+individualTotalExpensesR3,Maine,4010
+individualTotalExpensesR3,Michigan,49836
+individualTotalExpensesR3,Minnesota,56212
+individualTotalExpensesR3,Missouri,63737
+individualTotalExpensesR3,Mississippi,39750
+individualTotalExpensesR3,Montana,59058
+individualTotalExpensesR3,North Carolina,28636
+individualTotalExpensesR3,North Dakota,58477
+individualTotalExpensesR3,Nebraska,68007
+individualTotalExpensesR3,New Hampshire,3215
+individualTotalExpensesR3,New Jersey,8014
+individualTotalExpensesR3,New Mexico,87730
+individualTotalExpensesR3,Nevada,89415
+individualTotalExpensesR3,New York,12345
+individualTotalExpensesR3,Ohio,43310
+individualTotalExpensesR3,Oklahoma,74521
+individualTotalExpensesR3,Oregon,97711
+individualTotalExpensesR3,Pennsylvania,15711
+individualTotalExpensesR3,Rhode Island,2801
+individualTotalExpensesR3,South Carolina,29401
+individualTotalExpensesR3,South Dakota,57012
+individualTotalExpensesR3,Tennessee,37707
+individualTotalExpensesR3,Texas,76001
+individualTotalExpensesR3,Utah,84301
+individualTotalExpensesR3,Virginia,24058
+individualTotalExpensesR3,Vermont,5442
+individualTotalExpensesR3,Washington,98581
+individualTotalExpensesR3,Wisconsin,54135
+individualTotalExpensesR3,West Virginia,25022
+individualTotalExpensesR3,Wyoming,82301
+familyMedicareR3,Alaska,99546
+familyMedicareR3,Alabama,35111
+familyMedicareR3,Arkansas,72354
+familyMedicareR3,Arizona,85321
+familyMedicareR3,California,93202
+familyMedicareR3,Colorado,81321
+familyMedicareR3,Connecticut,6249
+familyMedicareR3,Dist of Columbia,20001
+familyMedicareR3,Delaware,19701
+familyMedicareR3,Florida,32003
+familyMedicareR3,Georgia,30002
+familyMedicareR3,Hawaii,96703
+familyMedicareR3,Iowa,50065
+familyMedicareR3,Idaho,83611
+familyMedicareR3,Illinois,61727
+familyMedicareR3,Indiana,47564
+familyMedicareR3,Kansas,67418
+familyMedicareR3,Kentucky,40313
+familyMedicareR3,Louisiana,71316
+familyMedicareR3,Massachusetts,1054
+familyMedicareR3,Maryland,21520
+familyMedicareR3,Maine,4010
+familyMedicareR3,Michigan,49836
+familyMedicareR3,Minnesota,56212
+familyMedicareR3,Missouri,63737
+familyMedicareR3,Mississippi,39750
+familyMedicareR3,Montana,59058
+familyMedicareR3,North Carolina,28636
+familyMedicareR3,North Dakota,58477
+familyMedicareR3,Nebraska,68007
+familyMedicareR3,New Hampshire,3215
+familyMedicareR3,New Jersey,8014
+familyMedicareR3,New Mexico,87730
+familyMedicareR3,Nevada,89415
+familyMedicareR3,New York,12345
+familyMedicareR3,Ohio,43310
+familyMedicareR3,Oklahoma,74521
+familyMedicareR3,Oregon,97711
+familyMedicareR3,Pennsylvania,15711
+familyMedicareR3,Rhode Island,2801
+familyMedicareR3,South Carolina,29401
+familyMedicareR3,South Dakota,57012
+familyMedicareR3,Tennessee,37707
+familyMedicareR3,Texas,76001
+familyMedicareR3,Utah,84301
+familyMedicareR3,Virginia,24058
+familyMedicareR3,Vermont,5442
+familyMedicareR3,Washington,98581
+familyMedicareR3,Wisconsin,54135
+familyMedicareR3,West Virginia,25022
+familyMedicareR3,Wyoming,82301
+familyTotalExpensesR3,Alaska,99546
+familyTotalExpensesR3,Alabama,35111
+familyTotalExpensesR3,Arkansas,72354
+familyTotalExpensesR3,Arizona,85321
+familyTotalExpensesR3,California,93202
+familyTotalExpensesR3,Colorado,81321
+familyTotalExpensesR3,Connecticut,6249
+familyTotalExpensesR3,Dist of Columbia,20001
+familyTotalExpensesR3,Delaware,19701
+familyTotalExpensesR3,Florida,32003
+familyTotalExpensesR3,Georgia,30002
+familyTotalExpensesR3,Hawaii,96703
+familyTotalExpensesR3,Iowa,50065
+familyTotalExpensesR3,Idaho,83611
+familyTotalExpensesR3,Illinois,61727
+familyTotalExpensesR3,Indiana,47564
+familyTotalExpensesR3,Kansas,67418
+familyTotalExpensesR3,Kentucky,40313
+familyTotalExpensesR3,Louisiana,71316
+familyTotalExpensesR3,Massachusetts,1054
+familyTotalExpensesR3,Maryland,21520
+familyTotalExpensesR3,Maine,4010
+familyTotalExpensesR3,Michigan,49836
+familyTotalExpensesR3,Minnesota,56212
+familyTotalExpensesR3,Missouri,63737
+familyTotalExpensesR3,Mississippi,39750
+familyTotalExpensesR3,Montana,59058
+familyTotalExpensesR3,North Carolina,28636
+familyTotalExpensesR3,North Dakota,58477
+familyTotalExpensesR3,Nebraska,68007
+familyTotalExpensesR3,New Hampshire,3215
+familyTotalExpensesR3,New Jersey,8014
+familyTotalExpensesR3,New Mexico,87730
+familyTotalExpensesR3,Nevada,89415
+familyTotalExpensesR3,New York,12345
+familyTotalExpensesR3,Ohio,43310
+familyTotalExpensesR3,Oklahoma,74521
+familyTotalExpensesR3,Oregon,97711
+familyTotalExpensesR3,Pennsylvania,15711
+familyTotalExpensesR3,Rhode Island,2801
+familyTotalExpensesR3,South Carolina,29401
+familyTotalExpensesR3,South Dakota,57012
+familyTotalExpensesR3,Tennessee,37707
+familyTotalExpensesR3,Texas,76001
+familyTotalExpensesR3,Utah,84301
+familyTotalExpensesR3,Virginia,24058
+familyTotalExpensesR3,Vermont,5442
+familyTotalExpensesR3,Washington,98581
+familyTotalExpensesR3,Wisconsin,54135
+familyTotalExpensesR3,West Virginia,25022
+familyTotalExpensesR3,Wyoming,82301
